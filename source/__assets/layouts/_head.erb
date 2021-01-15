@@ -1,0 +1,15 @@
+<% url = [config[:host], current_page.url].join %>
+<% title = [current_page.data.title, config[:site_name]].compact.join(' | ') %>
+<% author = current_page.data.author || config[:author] %>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+  <title><%= title %></title>
+  <%= meta(:description, current_page.data.description) %>
+  <%= meta(:author, author) %>
+  <link rel="canonical" href="<%= url %>">
+
+  <%= partial '__assets/layouts/styles' %>
+</head>
